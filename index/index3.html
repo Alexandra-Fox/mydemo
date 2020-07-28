@@ -1,0 +1,78 @@
+<! DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>First</title>
+        <link rel="stylesheet" href="C:\Users\efimo\Desktop\практика\style\style.css">
+
+    </head>
+
+    <body>
+
+        <h1>Третье задание</h1>
+        <main>
+            <p>С помощью JS'а рекурсивно срендерить дерево из элементов вида
+                { title: string, children: obj[] } <br>
+                Выглядить это должно также, как выглядит дерево папок в проводнике винды, ну или как дерево файлов проекта в IDE'шках</p>
+            <img src="C:\Users\efimo\Desktop\практика\image\img2.png" alt="img">
+            <h2>Выполнение &#128270 </h2>
+
+            <div id="container"></div>
+
+            <script>
+                let data = {
+                    "Первое": {
+                        "push": {},
+                        "pop": {},
+                        "...": {}
+                    },
+
+                    "Второе": {
+                        "String": {}
+                    },
+                    "Третье": {
+                        "Tree": {}
+                    }
+                }
+
+
+                function createTree(container, obj) {
+                    container.append(createTreeDom(obj));
+                }
+
+                function createTreeDom(obj) {
+
+                    if (!Object.keys(obj).length) return;
+
+                    let ul = document.createElement('ul');
+
+                    for (let key in obj) {
+                        let li = document.createElement('li');
+                        li.innerHTML = key;
+
+                        let childrenUl = createTreeDom(obj[key]);
+                        if (childrenUl) {
+                            li.append(childrenUl);
+                        }
+
+                        ul.append(li);
+                    }
+
+                    return ul;
+                }
+
+                let container = document.getElementById('container');
+                createTree(container, data);
+
+            </script>
+
+        </main>
+        <footer>
+            <a href="C:\Users\efimo\Desktop\практика\index\index.html"> Первое</a>
+            <a href="C:\Users\efimo\Desktop\практика\index\index2.html"> Второе</a>
+        </footer>
+
+    </body>
+
+    </html>

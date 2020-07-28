@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+    color: darkcyan;
+    background: #DFDFDF
+}
+
+h2 {
+    text-align: center;
+    color: darkolivegreen;
+}
+
+main {
+    text-align: center;
+    color: cadetblue;
+    flex-wrap: wrap;
+}
+
+footer {
+    text-align: center;
+    color: darkgreen;
+    background: #DFDFDF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div {
+    width: 150px;
+    margin: auto;
+    text-align: center;
+    border: 2px solid green;
+    padding = style.padding;
+    margin = style.margin;
+}
+ul {
+    padding-inline-start: 20px;
+}
+li {
+    line-height: 1.2;
+     padding: 1% 2%;
+   }
