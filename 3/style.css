@@ -1,0 +1,30 @@
+/*.circle {
+    width: 150px;
+    height: 150px;
+    background-color: brown;
+    border-radius: 50%;
+    transform: translateX(900px);
+    animation: animation-name 2s linear infinite;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 50px solid gray;
+    transform: translateX(1000px);
+    animation: animation-name 2s linear infinite;
+}*/
+
+canvas {
+    transform: translateX(1000px);
+    animation: animation-name 2s linear infinite;
+    position: fixed;
+}
+
+@keyframes animation-name {
+    50% {
+        transform: translateX(350px) translateY(100px) scale(2);
+    }
+}

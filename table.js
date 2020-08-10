@@ -1,7 +1,6 @@
 'use strict'
 
-let arr = [
-    {
+let arr = [{
         name: "name1",
         value: "value1,value2,value3"
     },
@@ -24,10 +23,10 @@ function createTable(parent, tableElem) {
 
     var table = document.createElement('table');
 
-    tableElem.forEach(function (elem) {
+    tableElem.forEach(function(elem) {
         var tr = document.createElement('tr');
 
-        Object.values(elem).forEach(function (column, i) {
+        Object.values(elem).forEach(function(column, i) {
             if (i == 0) {
                 var td = document.createElement('td');
                 td.innerHTML = '<div class="delete">&#10008;</div>' + elem['name'];
@@ -36,7 +35,7 @@ function createTable(parent, tableElem) {
             } else {
                 var tableValue = column.split(',');
 
-                tableValue.forEach(function (value) {
+                tableValue.forEach(function(value) {
                     var td = document.createElement('td');
                     td.innerHTML = value;
                     tr.appendChild(td);
@@ -49,12 +48,12 @@ function createTable(parent, tableElem) {
 
     parent.appendChild(table);
 
-    table.onclick = function (event) {
+    table.onclick = function(event) {
         let target = event.target;
         let querysel = target.parentElement.querySelectorAll('td');
         let textsplise = [];
 
-        querysel.forEach(function (td) {
+        querysel.forEach(function(td) {
             textsplise.push(td.textContent);
         });
         text.innerHTML = textsplise.join(' ');
@@ -62,8 +61,8 @@ function createTable(parent, tableElem) {
 
     let deleteButton = document.querySelectorAll('.delete');
 
-    deleteButton.forEach(function (btn) {
-        btn.addEventListener('click', function () {
+    deleteButton.forEach(function(btn) {
+        btn.addEventListener('click', function() {
             let indexElement = indexInParent(this.closest('tr'));
             arr.splice(indexElement, 1);
             this.closest('tr').remove();
@@ -71,9 +70,9 @@ function createTable(parent, tableElem) {
     });
 }
 
-newrow.addEventListener('click', function () {
+newrow.addEventListener('click', function() {
     let newElementArr = prompt('Введите данные для поля. Пример: "name,value,value2,value3"', 'name,value,value2,value3');
-    
+
     if (newElementArr != null) {
         let splitArr = newElementArr.split(','),
             newElementArrName = splitArr[0],
