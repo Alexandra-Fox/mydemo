@@ -1,0 +1,21 @@
+            .circle {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            background-color: brown;
+            border-radius: 50%;
+            cursor: move;
+            transform: translateX(900px);
+            animation: animation-name 2s linear infinite;
+        }
+        
+        .triangle {
+            position: fixed;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 50px solid gray;
+            cursor: move;
+            transform: translateX(1000px);
+            animation: animation-name 2s linear infinite;
